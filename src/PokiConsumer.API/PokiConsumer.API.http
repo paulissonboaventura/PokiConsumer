@@ -1,0 +1,6 @@
+@PokiConsumer.API_HostAddress = http://localhost:5029
+
+GET {{PokiConsumer.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokiConsumer.Domain", "src\PokiConsumer.Domain\PokiConsumer.Domain.csproj", "{EEE1BCAC-B4D2-4324-9F44-49A20BDB9F61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokiConsumer.Infrastructure", "src\PokiConsumer.Infrastructure\PokiConsumer.Infrastructure.csproj", "{D5BA58DE-F231-43E2-864A-21C5DD4D98AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokiConsumer.API", "src\PokiConsumer.API\PokiConsumer.API.csproj", "{92A483DB-6569-41F0-BA32-9A3F0BB10F7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0C4513A5-9264-4D50-A0CF-9B11550F466C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PokiConsumer.Infrastructure.IoC", "src\PokiConsumer.Infrastructure.IoC\PokiConsumer.Infrastructure.IoC.csproj", "{430BE6CF-D37B-4146-9D57-6A80D394481B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEE1BCAC-B4D2-4324-9F44-49A20BDB9F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEE1BCAC-B4D2-4324-9F44-49A20BDB9F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEE1BCAC-B4D2-4324-9F44-49A20BDB9F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEE1BCAC-B4D2-4324-9F44-49A20BDB9F61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5BA58DE-F231-43E2-864A-21C5DD4D98AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5BA58DE-F231-43E2-864A-21C5DD4D98AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5BA58DE-F231-43E2-864A-21C5DD4D98AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5BA58DE-F231-43E2-864A-21C5DD4D98AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A483DB-6569-41F0-BA32-9A3F0BB10F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A483DB-6569-41F0-BA32-9A3F0BB10F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A483DB-6569-41F0-BA32-9A3F0BB10F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A483DB-6569-41F0-BA32-9A3F0BB10F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{430BE6CF-D37B-4146-9D57-6A80D394481B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{430BE6CF-D37B-4146-9D57-6A80D394481B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{430BE6CF-D37B-4146-9D57-6A80D394481B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{430BE6CF-D37B-4146-9D57-6A80D394481B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EEE1BCAC-B4D2-4324-9F44-49A20BDB9F61} = {0C4513A5-9264-4D50-A0CF-9B11550F466C}
+		{D5BA58DE-F231-43E2-864A-21C5DD4D98AE} = {0C4513A5-9264-4D50-A0CF-9B11550F466C}
+		{92A483DB-6569-41F0-BA32-9A3F0BB10F7B} = {0C4513A5-9264-4D50-A0CF-9B11550F466C}
+		{430BE6CF-D37B-4146-9D57-6A80D394481B} = {0C4513A5-9264-4D50-A0CF-9B11550F466C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F5C78C7-FCE3-4832-AF87-1709CCE6B1F4}
+	EndGlobalSection
+EndGlobal
