@@ -1,10 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PokiConsumer.Domain;
+using Microsoft.Extensions.Options;
 using PokiConsumer.Domain.Interfaces.Repositories;
-using PokiConsumer.Domain.Models.Pokemon.Generation;
+using PokiConsumer.Infrastructure.IoC.Helpers;
+using PokiConsumer.Infrastructure.IoC.Options;
 using PokiConsumer.Infrastructure.Repositories;
 using System.Text.Json;
+using System.Text.Json.Serialization.Metadata;
 
 namespace PokiConsumer.Infrastructure.IoC;
 
@@ -12,13 +14,21 @@ public static class RepositoryContainer
 {
     public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddHttpClient("poki", client => client.BaseAddress = new Uri(configuration.GetValue<string>("PokiApi")));
+        PokiOptions pokiOptions = new();
+        configuration.GetSection(nameof(PokiOptions)).Bind(pokiOptions);
 
+        services.AddHttpClient("poki", client => client.BaseAddress = new Uri($"{pokiOptions.ApiUrl}/{pokiOptions.Version}/"));
+
+        services.AddTransient<IBaseRepository, BaseRepository>();
+        services.AddTransient<PokiOptions>(options => pokiOptions);
         services.AddTransient<JsonSerializerOptions>(serializerOption => new JsonSerializerOptions
         {
-            PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower
+            PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
+            TypeInfoResolver = new DefaultJsonTypeInfoResolver
+            {
+                Modifiers = { InheritJsonIgnoreHelper.InheritJsonIgnore }
+            }
         });
-        services.AddTransient<IPokiRepository, PokiRepository>();
 
         return services;
     }

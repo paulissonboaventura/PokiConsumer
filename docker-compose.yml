@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  pokiconsumer.api:
+    image: ${DOCKER_REGISTRY-}pokiconsumerapi
+    build:
+      context: .
+      dockerfile: src/PokiConsumer.API/Dockerfile
